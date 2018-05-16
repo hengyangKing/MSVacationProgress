@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194D94520264BC85D6B63E54 /* Pods_MSVacationProgressDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */; };
 		3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */; };
 		3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6E20ABE9FB00149E24 /* ViewController.m */; };
 		3C29CA7220ABE9FB00149E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7020ABE9FB00149E24 /* Main.storyboard */; };
 		3C29CA7420ABE9FB00149E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7320ABE9FB00149E24 /* Assets.xcassets */; };
 		3C29CA7720ABE9FB00149E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */; };
 		3C29CA7A20ABE9FC00149E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA7920ABE9FC00149E24 /* main.m */; };
+		3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */; };
+		3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */; };
+		3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */; };
+		3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868F20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m */; };
+		3C89869B20AC8D55001A3A88 /* MSVacationProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89869320AC8D55001A3A88 /* MSVacationProgressView.m */; };
+		3C89869C20AC8D55001A3A88 /* MSVacationProgressScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89869420AC8D55001A3A88 /* MSVacationProgressScript.m */; };
+		3C89869D20AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89869520AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m */; };
+		3C89869E20AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89869820AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m */; };
+		3C8986A220AC8D64001A3A88 /* UIViewController+CurrentTopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSVacationProgressDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		284B7D7DD24C5F2BE2D9533B /* Pods-MSVacationProgressDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSVacationProgressDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSVacationProgressDemo/Pods-MSVacationProgressDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3C29CA6720ABE9FB00149E24 /* MSVacationProgressDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSVacationProgressDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C29CA6A20ABE9FB00149E24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +38,25 @@
 		3C29CA7620ABE9FB00149E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C29CA7820ABE9FC00149E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C29CA7920ABE9FC00149E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressMananger.h; sourceTree = "<group>"; };
+		3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressMananger.m; sourceTree = "<group>"; };
+		3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressCurtainView.h; sourceTree = "<group>"; };
+		3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressCurtainView.m; sourceTree = "<group>"; };
+		3C89868C20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressAppearanceConfig.h; sourceTree = "<group>"; };
+		3C89868D20AC8D0B001A3A88 /* MSVacationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgress.h; sourceTree = "<group>"; };
+		3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgress.m; sourceTree = "<group>"; };
+		3C89868F20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressAppearanceConfig.m; sourceTree = "<group>"; };
+		3C89869320AC8D55001A3A88 /* MSVacationProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressView.m; sourceTree = "<group>"; };
+		3C89869420AC8D55001A3A88 /* MSVacationProgressScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressScript.m; sourceTree = "<group>"; };
+		3C89869520AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressViewAppearanceConfig.m; sourceTree = "<group>"; };
+		3C89869620AC8D55001A3A88 /* MSVacationProgressAnnouncerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressAnnouncerView.h; sourceTree = "<group>"; };
+		3C89869720AC8D55001A3A88 /* MSVacationProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressView.h; sourceTree = "<group>"; };
+		3C89869820AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressAnnouncerView.m; sourceTree = "<group>"; };
+		3C89869920AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressViewAppearanceConfig.h; sourceTree = "<group>"; };
+		3C89869A20AC8D55001A3A88 /* MSVacationProgressScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressScript.h; sourceTree = "<group>"; };
+		3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentTopVC.m"; sourceTree = "<group>"; };
+		3C8986A120AC8D64001A3A88 /* UIViewController+CurrentTopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentTopVC.h"; sourceTree = "<group>"; };
+		B18D60485111ABC5B7A5BB08 /* Pods-MSVacationProgressDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSVacationProgressDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MSVacationProgressDemo/Pods-MSVacationProgressDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194D94520264BC85D6B63E54 /* Pods_MSVacationProgressDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +76,8 @@
 			children = (
 				3C29CA6920ABE9FB00149E24 /* MSVacationProgressDemo */,
 				3C29CA6820ABE9FB00149E24 /* Products */,
+				EC919F0F0FF3C1DCC7D43CCD /* Pods */,
+				3FD25CDEBD6030888EC301C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +96,7 @@
 				3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */,
 				3C29CA6D20ABE9FB00149E24 /* ViewController.h */,
 				3C29CA6E20ABE9FB00149E24 /* ViewController.m */,
+				3C89866E20AC01EC001A3A88 /* MSVacationProgress */,
 				3C29CA7020ABE9FB00149E24 /* Main.storyboard */,
 				3C29CA7320ABE9FB00149E24 /* Assets.xcassets */,
 				3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */,
@@ -71,6 +106,72 @@
 			path = MSVacationProgressDemo;
 			sourceTree = "<group>";
 		};
+		3C89866E20AC01EC001A3A88 /* MSVacationProgress */ = {
+			isa = PBXGroup;
+			children = (
+				3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */,
+				3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */,
+				3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */,
+				3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */,
+				3C89869F20AC8D64001A3A88 /* Tools */,
+				3C89868B20AC8D0B001A3A88 /* MSVacationProgress */,
+				3C89869220AC8D55001A3A88 /* MSVacationProgressView */,
+			);
+			path = MSVacationProgress;
+			sourceTree = "<group>";
+		};
+		3C89868B20AC8D0B001A3A88 /* MSVacationProgress */ = {
+			isa = PBXGroup;
+			children = (
+				3C89868C20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.h */,
+				3C89868F20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m */,
+				3C89868D20AC8D0B001A3A88 /* MSVacationProgress.h */,
+				3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */,
+			);
+			path = MSVacationProgress;
+			sourceTree = "<group>";
+		};
+		3C89869220AC8D55001A3A88 /* MSVacationProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				3C89869720AC8D55001A3A88 /* MSVacationProgressView.h */,
+				3C89869320AC8D55001A3A88 /* MSVacationProgressView.m */,
+				3C89869A20AC8D55001A3A88 /* MSVacationProgressScript.h */,
+				3C89869420AC8D55001A3A88 /* MSVacationProgressScript.m */,
+				3C89869920AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.h */,
+				3C89869520AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m */,
+				3C89869620AC8D55001A3A88 /* MSVacationProgressAnnouncerView.h */,
+				3C89869820AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m */,
+			);
+			path = MSVacationProgressView;
+			sourceTree = "<group>";
+		};
+		3C89869F20AC8D64001A3A88 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */,
+				3C8986A120AC8D64001A3A88 /* UIViewController+CurrentTopVC.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3FD25CDEBD6030888EC301C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC919F0F0FF3C1DCC7D43CCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				284B7D7DD24C5F2BE2D9533B /* Pods-MSVacationProgressDemo.debug.xcconfig */,
+				B18D60485111ABC5B7A5BB08 /* Pods-MSVacationProgressDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C29CA7D20ABE9FC00149E24 /* Build configuration list for PBXNativeTarget "MSVacationProgressDemo" */;
 			buildPhases = (
+				3DE7D17F30B5B00D6A932E8D /* [CP] Check Pods Manifest.lock */,
 				3C29CA6320ABE9FB00149E24 /* Sources */,
 				3C29CA6420ABE9FB00149E24 /* Frameworks */,
 				3C29CA6520ABE9FB00149E24 /* Resources */,
+				E70997DA29A3B58A2BCD041F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +239,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DE7D17F30B5B00D6A932E8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MSVacationProgressDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E70997DA29A3B58A2BCD041F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MSVacationProgressDemo/Pods-MSVacationProgressDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MSVacationProgressDemo/Pods-MSVacationProgressDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C29CA6320ABE9FB00149E24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C89869E20AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m in Sources */,
+				3C89869D20AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m in Sources */,
+				3C89869B20AC8D55001A3A88 /* MSVacationProgressView.m in Sources */,
+				3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */,
+				3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */,
+				3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */,
 				3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */,
+				3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */,
+				3C89869C20AC8D55001A3A88 /* MSVacationProgressScript.m in Sources */,
+				3C8986A220AC8D64001A3A88 /* UIViewController+CurrentTopVC.m in Sources */,
 				3C29CA7A20ABE9FC00149E24 /* main.m in Sources */,
 				3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */,
 			);
@@ -281,11 +432,13 @@
 		};
 		3C29CA7E20ABE9FC00149E24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 284B7D7DD24C5F2BE2D9533B /* Pods-MSVacationProgressDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLHBVKZG33;
 				INFOPLIST_FILE = MSVacationProgressDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +451,13 @@
 		};
 		3C29CA7F20ABE9FC00149E24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B18D60485111ABC5B7A5BB08 /* Pods-MSVacationProgressDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLHBVKZG33;
 				INFOPLIST_FILE = MSVacationProgressDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

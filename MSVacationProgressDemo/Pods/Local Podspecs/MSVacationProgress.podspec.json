@@ -1,0 +1,29 @@
+{
+  "name": "MSVacationProgress",
+  "version": "0.0.1",
+  "license": {
+    "type": "BSD"
+  },
+  "homepage": "https://github.com/tonymillion/Reachability",
+  "authors": {
+    "hengyang king": "hengyangking@gmail.com"
+  },
+  "summary": "a progress view use for YQTeacher project for middle school vacation homework formation progress",
+  "source": {
+    "git": "https://github.com/hengyangKing/MSVacationProgress.git",
+    "tag": "spec.version"
+  },
+  "dependencies": {
+    "Masonry": [
+
+    ]
+  },
+  "source_files": "./MSVacationProgress/**/*{h,m}",
+  "frameworks": "UIKit",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

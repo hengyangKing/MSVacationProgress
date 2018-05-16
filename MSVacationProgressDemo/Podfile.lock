@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - MSVacationProgress (0.0.1):
+    - Masonry
+
+DEPENDENCIES:
+  - MSVacationProgress (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  MSVacationProgress:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MSVacationProgress: 30d4612556fe408125290328c5183ed05fc8f4fd
+
+PODFILE CHECKSUM: 278546ebe6d3e458cfd425157a3dd7c14ecc5a7a
+
+COCOAPODS: 1.5.2
