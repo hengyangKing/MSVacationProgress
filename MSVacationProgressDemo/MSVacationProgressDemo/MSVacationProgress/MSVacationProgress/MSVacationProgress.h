@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Masonry.h"
 
 @class MSVacationProgressAppearanceConfig;
 @interface MSVacationProgress : UIView

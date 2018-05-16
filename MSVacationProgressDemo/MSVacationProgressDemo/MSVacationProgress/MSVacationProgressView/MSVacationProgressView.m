@@ -10,6 +10,7 @@
 #import "MSVacationProgressAnnouncerView.h"
 #import "MSVacationProgress.h"
 #import "MSVacationProgressViewAppearanceConfig.h"
+#import "Masonry.h"
 
 #warning 暂至
 #define Margin 14
@@ -125,6 +126,10 @@
     NSInteger next = [weakself normaltTransitions] ? currentIndex + 1:currentIndex-1;
     if (next<0 || next == self.scripts.count) {return;}
 
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(MSVacationProgressView:andCurrentScript:andCurrentIndex:)]) {
+        [self.delegate MSVacationProgressView:self andCurrentScript:script andCurrentIndex:currentIndex];
+    }
+    
     [self.progress setProgress:progress andInterval:script.interval animatedFinish:^{
         if ([weakself normaltTransitions]) {
             //正向
@@ -152,6 +157,7 @@
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:nextIndex inSection:0] atScrollPosition:(UICollectionViewScrollPositionNone) animated:YES];
     MSVacationProgressScript *nextScript = self.scripts[nextIndex];
     [self showAnimationWithScript:nextScript];
+    
 }
 -(void)progressAnimationFinish {
     //进度条展示完毕

@@ -7,18 +7,20 @@
 //
 
 #import "ViewController.h"
-#import "MSVacationProgress.h"
-@interface ViewController ()
-@property(nonatomic,strong)MSVacationProgress *progress;
+#import "MSVacationProgressView.h"
+#import "Masonry.h"
+@interface ViewController ()<MSVacationProgressViewDelegate,MSVacationProgressViewDataSorce>
+@property(nonatomic,strong)MSVacationProgressView *progress;
 @end
 
 @implementation ViewController
--(MSVacationProgress *)progress
-{
+-(MSVacationProgressView *)progress {
     if (!_progress) {
-        _progress = [MSVacationProgress MSVacationProgressWithConfig:^(MSVacationProgressAppearanceConfig *config) {
+        _progress = [MSVacationProgressView createWithAppearanceConfig:^(MSVacationProgressViewAppearanceConfig *config) {
             
         }];
+        _progress.delegate = self;
+        _progress.dataSource = self;
     }
     return _progress;
 }
@@ -39,19 +41,20 @@
 
 
 }
--(void)foo{
-    [self.progress setProgress:foo andInterval:1.5f animatedFinish:^{
-        NSLog(@"finish");
-        foo+=0.333333333333333333;
-    }];
-}
-static CGFloat foo = 0.333333333333333333f;
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSInteger i = 0; i++ ; i<10) {
+        NSString *str = [NSString stringWithFormat:@"%@",@(i)];
+        MSVacationProgressScript *script = [MSVacationProgressScript progressScriptWithTitle:str andSubTitle:str andTimeInterval:i+0.5];
+        [array addObject:script];
+    }
+    return array;
 }
+
+
 
 
 @end

@@ -15,6 +15,6 @@
 
 @property(nonatomic,strong)MSVacationProgressScriptContent *content;
 @property(nonatomic,assign)NSTimeInterval interval;//每一幕时长
-@property(nonatomic,assign)NSTimeInterval transitionsTime;//转场时常;
 -(BOOL)grundScript;
++(instancetype)progressScriptWithTitle:(NSString *)title andSubTitle:(NSString *)subtitle andTimeInterval:(NSTimeInterval)timeInterval;
 @end

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSVacationProgressScript.h"
 @class MSVacationProgressView;
-@class MSVacationProgressScript;
 @class MSVacationProgressViewAppearanceConfig;
 
 @protocol MSVacationProgressViewDelegate <NSObject>
@@ -19,7 +19,7 @@
 -(void)MSVacationProgressViewWillFinishAnimate:(MSVacationProgressView *)view;
 
 //每次切换脚本调用
--(void)MSVacationProgressView:(MSVacationProgressView *)view ExchangeScript:(MSVacationProgressScript *)currentScript andCurrentIndex:(NSUInteger)currentIndex;
+-(void)MSVacationProgressView:(MSVacationProgressView *)view andCurrentScript:(MSVacationProgressScript *)currentScript andCurrentIndex:(NSUInteger)currentIndex;
 
 @end
 @protocol MSVacationProgressViewDataSorce <NSObject>

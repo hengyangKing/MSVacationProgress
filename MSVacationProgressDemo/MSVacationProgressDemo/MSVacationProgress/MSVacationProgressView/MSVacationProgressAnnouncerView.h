@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSVacationProgressViewAppearanceConfig.h"
-#import "MSVacationProgressScript.h"
+@class MSVacationProgressViewAppearanceConfig;
+@class MSVacationProgressScript;
 @interface MSVacationProgressAnnouncerView : UICollectionViewCell
 
 @property(nonatomic,copy,readonly)void(^AppearanceConfig)(MSVacationProgressViewAppearanceConfig *);

@@ -8,6 +8,8 @@
 
 #import "MSVacationProgress.h"
 #import "MSVacationProgressAppearanceConfig.h"
+#import "Masonry.h"
+
 @interface MSVacationProgress()
 @property(nonatomic,strong)UIView *bgView;
 @property(nonatomic,strong)UIView *innerView;

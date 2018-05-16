@@ -8,6 +8,8 @@
 
 #import "MSVacationProgressAnnouncerView.h"
 #import "MSVacationProgressViewAppearanceConfig.h"
+#import "MSVacationProgressScript.h"
+
 @interface MSVacationProgressAnnouncerView()
 @property(nonatomic,strong)UILabel *title;
 @property(nonatomic,strong)UILabel *subTitle;
