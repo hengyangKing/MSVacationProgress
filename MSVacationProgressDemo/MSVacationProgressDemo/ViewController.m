@@ -27,12 +27,14 @@
     [[MSVacationProgressMananger shareInstance]switchingScriptBlock:^(NSUInteger index) {
         NSLog(@"switching script index is %@",@(index));
     }];
-    
-    [[MSVacationProgressMananger shareInstance] finishProgressBlock:^MSVacationProgressManagerCurtainConfig *(MSVacationProgressManagerCurtainConfig *config) {
-        NSLog(@"finish Progress Block");
-        config.CurtainView([MSVacationProgressCurtainView curtainView]);
-        return config;
+    [[MSVacationProgressMananger shareInstance]finishProgressBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            MSVacationProgressManagerCurtainConfig *config = [MSVacationProgressManagerCurtainConfig defauteCurtainConfig];
+            config.CurtainView([MSVacationProgressCurtainView curtainView]);
+            [[MSVacationProgressMananger shareInstance]addCurtainWithConfig:config];
+        });
     }];
+    
 }
 
 

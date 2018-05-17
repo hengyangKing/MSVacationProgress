@@ -24,12 +24,15 @@
 -(void)dissmiss;
 
 //进度条将要展示完成block
--(void)finishProgressBlock:(MSVacationProgressManagerCurtainConfig * (^)(MSVacationProgressManagerCurtainConfig *))block;
+-(void)finishProgressBlock:(void (^)(void))block;
 
 //进度条将要展示block
 -(void)willShowProgressBlock:(void(^)(void))block;
 
 //切换脚本时block
 -(void)switchingScriptBlock:(void(^)(NSUInteger index))block;
+
+//添加自定义终场页面
+-(void)addCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config ;
 
 @end

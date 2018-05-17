@@ -20,7 +20,7 @@
 @property(nonatomic,strong)MSVacationProgressViewAppearanceConfig *appearConfig;
 
 
-@property(nonatomic,copy)MSVacationProgressManagerCurtainConfig * (^willFinishBlock)(MSVacationProgressManagerCurtainConfig *);
+@property(nonatomic,copy)void (^willFinishBlock)(void);
 @property(nonatomic,copy)void (^willShowBlock)(void);
 @property(nonatomic,copy)void (^switchingScriptBlock)(NSUInteger index);
 @end
@@ -92,28 +92,16 @@ static MSVacationProgressMananger *_shareInstance;
 -(void)dissmiss {
     [self.progressView dismiss];
 }
--(void)finishProgressBlock:(MSVacationProgressManagerCurtainConfig *(^)(MSVacationProgressManagerCurtainConfig *))block {
+-(void)finishProgressBlock:(void (^)(void))block {
     [self setWillFinishBlock:block];
 }
-
 -(void)willShowProgressBlock:(void (^)(void))block {
     [self setWillShowBlock:block];
 }
 -(void)switchingScriptBlock:(void (^)(NSUInteger))block {
     [self setSwitchingScriptBlock:block];
 }
-#pragma mark funcs
--(void)progressShow {
-    UIView *topview = [UIViewController currentTopVC].view;
-    if (topview) {
-        [topview addSubview:self.progressView];
-        [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.top.right.bottom.mas_equalTo(topview);
-        }];
-        [self.progressView show];
-    }
-}
--(void)showCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config {
+-(void)addCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config {
     if (config.showCurtain && config.curtain) {
         __weak typeof(self) weakself = self;
         [self.progressView addSubview:config.curtain];
@@ -128,6 +116,18 @@ static MSVacationProgressMananger *_shareInstance;
         }
     }
 }
+
+#pragma mark funcs
+-(void)progressShow {
+    UIView *topview = [UIViewController currentTopVC].view;
+    if (topview) {
+        [topview addSubview:self.progressView];
+        [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.bottom.mas_equalTo(topview);
+        }];
+        [self.progressView show];
+    }
+}
 #pragma ProgressView datasource
 - (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
     return self.scripts;
@@ -137,17 +137,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 
 -(void)MSVacationProgressViewWillFinishAnimate:(MSVacationProgressView *)view {
-    
-    if (self.willFinishBlock) {
-        MSVacationProgressManagerCurtainConfig *curtainConfig =self.willFinishBlock([MSVacationProgressManagerCurtainConfig defauteCurtainConfig]);
-        if (!curtainConfig) {
-            [self dissmiss];
-        }else{
-            [self showCurtainWithConfig:curtainConfig];
-        }
-    }else{
-        [self dissmiss];
-    }
+    !self.willFinishBlock?:self.willFinishBlock();
 }
 
 //每次切换脚本调用
