@@ -78,8 +78,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
-    NSString *isShowProgress=[[NSUserDefaults standardUserDefaults]objectForKey:kProgressKey];
-    if (isShowProgress.length) {return;}
+    if (self.isLoaded) {return;}
     
     [self showProgressWithScripts:^NSArray<MSVacationProgressScript *> *{
         MSVacationProgressScript *script0 = [MSVacationProgressScript progressScriptWithTitle:@"信息读取中..." andSubTitle:@"正在读取您管理的班级信息" andTimeInterval:1.5f];
@@ -91,6 +90,7 @@ static MSVacationProgressMananger *_shareInstance;
 
 -(void)dissmiss {
     [self.progressView dismiss];
+    [[NSUserDefaults standardUserDefaults] setObject:ProgressToken forKey:kProgressKey];
 }
 -(void)finishProgressBlock:(void (^)(void))block {
     [self setWillFinishBlock:block];
@@ -116,7 +116,10 @@ static MSVacationProgressMananger *_shareInstance;
         }
     }
 }
-
+-(BOOL)isLoaded {
+    NSString *isShowProgress=[[NSUserDefaults standardUserDefaults]objectForKey:kProgressKey];
+    return isShowProgress.length;
+}
 #pragma mark funcs
 -(void)progressShow {
     UIView *topview = [UIViewController currentTopVC].view;
