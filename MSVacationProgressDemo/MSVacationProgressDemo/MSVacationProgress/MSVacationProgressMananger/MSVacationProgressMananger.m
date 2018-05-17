@@ -88,7 +88,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
-//    if (self.isLoaded) {return;}
+    if (self.isLoaded) {return;}
     
     [self showProgressWithScripts:^NSArray<MSVacationProgressScript *> *{
         MSVacationProgressScript *script0 = [MSVacationProgressScript progressScriptWithTitle:@"信息读取中..." andSubTitle:@"正在读取您管理的班级信息" andTimeInterval:1.5f];

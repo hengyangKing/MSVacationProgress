@@ -34,8 +34,6 @@
 //切换脚本时block
 -(void)switchingScriptBlock:(void(^)(NSUInteger index))block;
 
-//添加自定义终场页面
--(void)addCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config ;
 //是否已经加载过动画
 @property(nonatomic,assign,readonly)BOOL isLoaded;
 
