@@ -9,12 +9,13 @@
 #import "MSVacationProgressView.h"
 #import "MSVacationProgressAnnouncerView.h"
 #import "MSVacationProgress.h"
+#import "MSVacationProgressScript.h"
 #import "MSVacationProgressViewAppearanceConfig.h"
 #import "Masonry.h"
 
 #warning 暂至
-#define Margin 14
-#define ItemH 200
+#define Margin 33
+#define ItemH 150
 #define ItemSize CGSizeMake([UIScreen mainScreen].bounds.size.width - 2*(Margin), ItemH)
 
 @interface MSVacationProgressView()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -68,10 +69,18 @@
     }
     return _collectionView;
 }
+-(MSVacationProgressViewAppearanceConfig *)config {
+    if (!_config) {
+        _config = [MSVacationProgressViewAppearanceConfig defauteAppearConfig];
+    }
+    return _config;
+}
 #pragma mark publicFunc
 +(instancetype)createWithAppearanceConfig:(void (^)(MSVacationProgressViewAppearanceConfig *))appearConfig {
     MSVacationProgressView *view = [[MSVacationProgressView alloc]init];
     !appearConfig?:appearConfig(view.config);
+    [view addSubviews];
+
     return view;
 }
 -(void)show {
@@ -84,7 +93,10 @@
             }
         }];
         if (!self.scripts.count) {return;}
-        [self showAnimation];
+        [self.collectionView reloadData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self showAnimation];
+        });
     }
 }
 -(void)dissmiss {
@@ -92,7 +104,6 @@
 }
 #pragma mark funcs
 -(void)showAnimation {
-    [self addSubviews];
     [self setupScrollview];
     MSVacationProgressScript *firstScript = [self normaltTransitions]? self.scripts.firstObject:self.scripts.lastObject;
     [self showAnimationWithScript:firstScript];
@@ -104,11 +115,12 @@
         make.centerY.mas_equalTo(weakSelf.mas_centerY);
         make.leading.mas_equalTo(weakSelf).mas_offset(Margin);
         make.trailing.mas_equalTo(weakSelf).mas_offset(-Margin);
+        make.height.mas_equalTo(weakSelf.config.progressH);
     }];
     [self addSubview:self.collectionView];
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(weakSelf.progress);
-        make.bottom.mas_equalTo(weakSelf.progress.mas_top).mas_offset(30);
+        make.bottom.mas_equalTo(weakSelf.progress.mas_top);
         make.height.mas_equalTo(ItemH);
     }];
 }
@@ -121,16 +133,16 @@
 -(void)showAnimationWithScript:(MSVacationProgressScript *)script{
     
     NSUInteger currentIndex = [self.scripts indexOfObject:script];
-    float progress = (currentIndex*1.0)/((self.scripts.count-1)*1.0);
+    float targetProgress = ((currentIndex+1)*1.0)/((self.scripts.count)*1.0);
     __weak typeof(self) weakself = self;
     NSInteger next = [weakself normaltTransitions] ? currentIndex + 1:currentIndex-1;
-    if (next<0 || next == self.scripts.count) {return;}
+    if (next<0 || next == self.scripts.count+1) {return;}
 
     if (self.delegate&&[self.delegate respondsToSelector:@selector(MSVacationProgressView:andCurrentScript:andCurrentIndex:)]) {
         [self.delegate MSVacationProgressView:self andCurrentScript:script andCurrentIndex:currentIndex];
     }
     
-    [self.progress setProgress:progress andInterval:script.interval animatedFinish:^{
+    [self.progress setProgress:targetProgress andInterval:script.interval animatedFinish:^{
         if ([weakself normaltTransitions]) {
             //正向
             if (currentIndex != weakself.scripts.count - 1) {

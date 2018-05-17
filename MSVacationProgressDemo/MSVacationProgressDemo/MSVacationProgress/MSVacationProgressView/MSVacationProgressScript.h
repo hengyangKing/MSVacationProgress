@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface MSVacationProgressScriptContent : NSObject
-@property(nonatomic,copy)NSString *title;//title
-@property(nonatomic,copy)NSString *subTitlt;//subtitle
-@end
+#import "MSVacationProgressScriptContent.h"
+
 @interface MSVacationProgressScript : NSObject
 
 @property(nonatomic,strong)MSVacationProgressScriptContent *content;

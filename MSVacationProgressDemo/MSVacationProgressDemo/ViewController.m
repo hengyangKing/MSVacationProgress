@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MSVacationProgressView.h"
+//#import "MSVacationProgressScript.h"
 #import "Masonry.h"
 @interface ViewController ()<MSVacationProgressViewDelegate,MSVacationProgressViewDataSorce>
 @property(nonatomic,strong)MSVacationProgressView *progress;
@@ -30,15 +31,11 @@
     
     [self.view addSubview:self.progress];
     [self.progress mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self.view);
-        make.leading.mas_equalTo(self.view).mas_offset(14);
-        make.trailing.mas_equalTo(self.view).mas_offset(-14);
-
-        make.height.mas_equalTo(5);
+        make.left.top.right.bottom.mas_equalTo(self.view);
     }];
     NSLog(@"123");
     
-
+    [self.progress show];
 
 }
 
@@ -46,9 +43,9 @@
 
 - (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
     NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger i = 0; i++ ; i<10) {
+    for (NSInteger i = 0; i<3 ; i++) {
         NSString *str = [NSString stringWithFormat:@"%@",@(i)];
-        MSVacationProgressScript *script = [MSVacationProgressScript progressScriptWithTitle:str andSubTitle:str andTimeInterval:i+0.5];
+        MSVacationProgressScript *script = [MSVacationProgressScript progressScriptWithTitle:str andSubTitle:str andTimeInterval:1.5];
         [array addObject:script];
     }
     return array;

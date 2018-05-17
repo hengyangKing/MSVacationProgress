@@ -40,8 +40,11 @@
 
 +(instancetype)createWithAppearanceConfig:(void (^)(MSVacationProgressViewAppearanceConfig *))appearConfig;
 
+
 -(void)show;
 
 -(void)dissmiss;
+
+
 
 @end

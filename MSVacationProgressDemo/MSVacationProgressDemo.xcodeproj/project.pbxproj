@@ -14,6 +14,7 @@
 		3C29CA7420ABE9FB00149E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7320ABE9FB00149E24 /* Assets.xcassets */; };
 		3C29CA7720ABE9FB00149E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */; };
 		3C29CA7A20ABE9FC00149E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA7920ABE9FC00149E24 /* main.m */; };
+		3C49D33C20AD27A700879CDD /* MSVacationProgressScriptContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */; };
 		3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */; };
 		3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */; };
 		3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */; };
@@ -38,6 +39,8 @@
 		3C29CA7620ABE9FB00149E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C29CA7820ABE9FC00149E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C29CA7920ABE9FC00149E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C49D33A20AD27A700879CDD /* MSVacationProgressScriptContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressScriptContent.h; sourceTree = "<group>"; };
+		3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressScriptContent.m; sourceTree = "<group>"; };
 		3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressMananger.h; sourceTree = "<group>"; };
 		3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressMananger.m; sourceTree = "<group>"; };
 		3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressCurtainView.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				3C89869320AC8D55001A3A88 /* MSVacationProgressView.m */,
 				3C89869A20AC8D55001A3A88 /* MSVacationProgressScript.h */,
 				3C89869420AC8D55001A3A88 /* MSVacationProgressScript.m */,
+				3C49D33A20AD27A700879CDD /* MSVacationProgressScriptContent.h */,
+				3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */,
 				3C89869920AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.h */,
 				3C89869520AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m */,
 				3C89869620AC8D55001A3A88 /* MSVacationProgressAnnouncerView.h */,
@@ -287,6 +292,7 @@
 				3C89869D20AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m in Sources */,
 				3C89869B20AC8D55001A3A88 /* MSVacationProgressView.m in Sources */,
 				3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */,
+				3C49D33C20AD27A700879CDD /* MSVacationProgressScriptContent.m in Sources */,
 				3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */,
 				3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */,
 				3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */,

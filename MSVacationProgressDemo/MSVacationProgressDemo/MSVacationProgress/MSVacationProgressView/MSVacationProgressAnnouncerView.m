@@ -9,6 +9,7 @@
 #import "MSVacationProgressAnnouncerView.h"
 #import "MSVacationProgressViewAppearanceConfig.h"
 #import "MSVacationProgressScript.h"
+#import "Masonry.h"
 
 @interface MSVacationProgressAnnouncerView()
 @property(nonatomic,strong)UILabel *title;
@@ -17,6 +18,13 @@
 @property(nonatomic,strong)MSVacationProgressScript *data;
 @end
 @implementation MSVacationProgressAnnouncerView
+-(instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self createUI];
+    }
+    return self;
+}
 +(NSString *)identifier {
     return [NSString stringWithFormat:@"%@ID",NSStringFromClass(self)];
 }
@@ -58,7 +66,22 @@
     [self.title setTextColor:_config.titleColor];
     [self.subTitle setTextColor:_config.subTitleColor];
     [self.title setFont:_config.titleFont];
-    [self.title setFont:_config.subTitleFont];
+    [self.subTitle setFont:_config.subTitleFont];
+}
+#pragma mark func
+-(void)createUI {
+    [self addSubview:self.title];
+    [self addSubview:self.subTitle];
+    __weak typeof(self) weakself = self;
+    [self.title mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(weakself);
+        make.height.mas_equalTo(weakself).multipliedBy(0.5);
+    }];
+    
+    [self.subTitle mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.mas_equalTo(weakself);
+        make.top.mas_equalTo(weakself.title.mas_bottom);
+    }];
 }
 
 

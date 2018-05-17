@@ -7,7 +7,6 @@
 //
 
 #import "MSVacationProgressMananger.h"
-#import "MSVacationProgressScript.h"
 #import "MSVacationProgressViewAppearanceConfig.h"
 #import "MSVacationProgressView.h"
 #import "MSVacationProgressCurtainView.h"

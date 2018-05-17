@@ -7,7 +7,6 @@
 //
 
 #import "MSVacationProgressScript.h"
-
 @implementation MSVacationProgressScript
 +(instancetype)progressScriptWithTitle:(NSString *)title andSubTitle:(NSString *)subtitle andTimeInterval:(NSTimeInterval)timeInterval {
     MSVacationProgressScript *script = [[MSVacationProgressScript alloc]init];

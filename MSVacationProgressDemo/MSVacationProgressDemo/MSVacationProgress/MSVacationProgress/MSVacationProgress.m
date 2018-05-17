@@ -59,7 +59,7 @@
 }
 
 - (void)setProgress:(float)progress andInterval:(NSTimeInterval)interval animatedFinish:(void(^)(void))finish {
-    if (self.innerView.bounds.size.width == self.bgView.bounds.size.width) {
+    if ((self.innerView.bounds.size.width == self.bgView.bounds.size.width)&&(self.innerView.bounds.size.width !=0)) {
         !finish?:finish();
         return;
     }

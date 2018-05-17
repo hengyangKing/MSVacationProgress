@@ -7,6 +7,8 @@
 //
 
 #import "MSVacationProgressViewAppearanceConfig.h"
+#import "MSVacationProgressAppearanceConfig.h"
+
 #define ProgressFONT(A) [UIFont fontWithName:@"PingFangSC-Regular"size:A]?[UIFont fontWithName:@"PingFangSC-Regular"size:A]:[UIFont systemFontOfSize:A]
 
 @implementation MSVacationProgressViewAppearanceConfig
@@ -31,6 +33,10 @@
 }
 -(void)setProgressConfig:(MSVacationProgressAppearanceConfig *)progressConfig {
     _progressConfig = progressConfig;
+}
+-(void)setProgressH:(CGFloat)progressH {
+    _progressH = progressH;
+    
 }
 -(MSVacationProgressViewAppearanceConfig *(^)(UIColor *))BGcolor {
     return ^(UIColor *color){
@@ -62,7 +68,12 @@
         return self;
     };
 }
-
+-(MSVacationProgressViewAppearanceConfig *(^)(CGFloat))ProgressBarH {
+    return ^(CGFloat h){
+        self.progressH = h;
+        return self;
+    };
+}
 -(MSVacationProgressViewAppearanceConfig *(^)(MSProgressAnnouncerTransitionsType))TransitionsType {
     return ^(MSProgressAnnouncerTransitionsType type){
         self.transitions = type;
@@ -78,7 +89,7 @@
 +(instancetype)defauteAppearConfig {
     MSVacationProgressViewAppearanceConfig *config = [[MSVacationProgressViewAppearanceConfig alloc]init];
     
-    config.BGcolor(ProgressRGB(245, 246, 247)).TitleTextFont(ProgressFONT(15)).SubTitleTextFont(ProgressFONT(12)).TitleTextColor(ProgressRGB(85, 85, 85)).SubTitleTextColor(ProgressRGB(85, 85, 85)).TransitionsType(AnnouncerTransitionsTypeIsUpward).ProgressAppearanceConfig([MSVacationProgressAppearanceConfig defauteAppearConfig]);
+    config.BGcolor(ProgressRGB(245, 246, 247)).TitleTextFont(ProgressFONT(15)).SubTitleTextFont(ProgressFONT(12)).TitleTextColor(ProgressRGB(85, 85, 85)).SubTitleTextColor(ProgressRGB(85, 85, 85)).TransitionsType(AnnouncerTransitionsTypeIsUpward).ProgressAppearanceConfig([MSVacationProgressAppearanceConfig defauteAppearConfig]).ProgressBarH(5.0f);
     
     return config;
 }

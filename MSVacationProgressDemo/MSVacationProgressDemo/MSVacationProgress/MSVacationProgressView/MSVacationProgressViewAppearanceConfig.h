@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSVacationProgressAppearanceConfig.h"
+@class MSVacationProgressAppearanceConfig;
 //转场类型
 typedef NS_ENUM(NSUInteger, MSProgressAnnouncerTransitionsType) {
     AnnouncerTransitionsTypeIsLeftward,//向左
@@ -32,6 +32,8 @@ typedef NS_ENUM(NSUInteger, MSProgressAnnouncerTransitionsType) {
 
 @property(nonatomic,copy,readonly)MSVacationProgressViewAppearanceConfig *(^SubTitleTextColor)(UIColor *);
 
+@property(nonatomic,copy,readonly)MSVacationProgressViewAppearanceConfig *(^ProgressBarH)(CGFloat);
+
 ///进度条外观
 @property(nonatomic,copy,readonly)MSVacationProgressViewAppearanceConfig *(^ProgressAppearanceConfig)(MSVacationProgressAppearanceConfig *);
 
@@ -45,6 +47,8 @@ typedef NS_ENUM(NSUInteger, MSProgressAnnouncerTransitionsType) {
 @property(nonatomic,strong,readonly)UIColor *titleColor;
 
 @property(nonatomic,strong,readonly)UIColor *subTitleColor;
+
+@property(nonatomic,assign,readonly)CGFloat progressH;
 
 @property(nonatomic,assign,readonly)MSProgressAnnouncerTransitionsType transitions;
 
