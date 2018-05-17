@@ -15,8 +15,8 @@
 		3C29CA7A20ABE9FC00149E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA7920ABE9FC00149E24 /* main.m */; };
 		3C49D33C20AD27A700879CDD /* MSVacationProgressScriptContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */; };
 		3C49D34020AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */; };
-		3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */; };
-		3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */; };
+		3C49D36820AD78FC00879CDD /* MSVacationProgressMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D36720AD78FB00879CDD /* MSVacationProgressMananger.m */; };
+		3C49D37020AD7DFD00879CDD /* MSVacationProgressCurtainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D36E20AD7DFD00879CDD /* MSVacationProgressCurtainView.m */; };
 		3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */; };
 		3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868F20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m */; };
 		3C89869B20AC8D55001A3A88 /* MSVacationProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89869320AC8D55001A3A88 /* MSVacationProgressView.m */; };
@@ -42,10 +42,10 @@
 		3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressScriptContent.m; sourceTree = "<group>"; };
 		3C49D33E20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressManagerCurtainConfig.h; sourceTree = "<group>"; };
 		3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressManagerCurtainConfig.m; sourceTree = "<group>"; };
-		3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressMananger.h; sourceTree = "<group>"; };
-		3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressMananger.m; sourceTree = "<group>"; };
-		3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressCurtainView.h; sourceTree = "<group>"; };
-		3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressCurtainView.m; sourceTree = "<group>"; };
+		3C49D36620AD78FB00879CDD /* MSVacationProgressMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressMananger.h; sourceTree = "<group>"; };
+		3C49D36720AD78FB00879CDD /* MSVacationProgressMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressMananger.m; sourceTree = "<group>"; };
+		3C49D36E20AD7DFD00879CDD /* MSVacationProgressCurtainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressCurtainView.m; sourceTree = "<group>"; };
+		3C49D36F20AD7DFD00879CDD /* MSVacationProgressCurtainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressCurtainView.h; sourceTree = "<group>"; };
 		3C89868C20AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressAppearanceConfig.h; sourceTree = "<group>"; };
 		3C89868D20AC8D0B001A3A88 /* MSVacationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSVacationProgress.h; sourceTree = "<group>"; };
 		3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgress.m; sourceTree = "<group>"; };
@@ -112,12 +112,12 @@
 		3C49D33D20AD47F800879CDD /* MSVacationProgressMananger */ = {
 			isa = PBXGroup;
 			children = (
-				3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */,
-				3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */,
+				3C49D36620AD78FB00879CDD /* MSVacationProgressMananger.h */,
+				3C49D36720AD78FB00879CDD /* MSVacationProgressMananger.m */,
 				3C49D33E20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.h */,
 				3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */,
-				3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */,
 				3C8986A120AC8D64001A3A88 /* UIViewController+CurrentTopVC.h */,
+				3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */,
 			);
 			path = MSVacationProgressMananger;
 			sourceTree = "<group>";
@@ -125,8 +125,8 @@
 		3C89866E20AC01EC001A3A88 /* MSVacationProgress */ = {
 			isa = PBXGroup;
 			children = (
-				3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */,
-				3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */,
+				3C49D36F20AD7DFD00879CDD /* MSVacationProgressCurtainView.h */,
+				3C49D36E20AD7DFD00879CDD /* MSVacationProgressCurtainView.m */,
 				3C49D33D20AD47F800879CDD /* MSVacationProgressMananger */,
 				3C89868B20AC8D0B001A3A88 /* MSVacationProgress */,
 				3C89869220AC8D55001A3A88 /* MSVacationProgressView */,
@@ -292,17 +292,17 @@
 				3C89869E20AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m in Sources */,
 				3C89869D20AC8D55001A3A88 /* MSVacationProgressViewAppearanceConfig.m in Sources */,
 				3C89869B20AC8D55001A3A88 /* MSVacationProgressView.m in Sources */,
-				3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */,
+				3C49D36820AD78FC00879CDD /* MSVacationProgressMananger.m in Sources */,
 				3C49D33C20AD27A700879CDD /* MSVacationProgressScriptContent.m in Sources */,
 				3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */,
 				3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */,
 				3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */,
-				3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */,
 				3C89869C20AC8D55001A3A88 /* MSVacationProgressScript.m in Sources */,
 				3C49D34020AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m in Sources */,
 				3C8986A220AC8D64001A3A88 /* UIViewController+CurrentTopVC.m in Sources */,
 				3C29CA7A20ABE9FC00149E24 /* main.m in Sources */,
 				3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */,
+				3C49D37020AD7DFD00879CDD /* MSVacationProgressCurtainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

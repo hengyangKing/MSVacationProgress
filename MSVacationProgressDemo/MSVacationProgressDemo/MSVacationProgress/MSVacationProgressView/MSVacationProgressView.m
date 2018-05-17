@@ -108,6 +108,9 @@
 }
 #pragma mark funcs
 -(void)showAnimation {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(MSVacationProgressViewWillShowAnimate:)]) {
+        [self.delegate MSVacationProgressViewWillShowAnimate:self];
+    }
     [self setupScrollview];
     MSVacationProgressScript *firstScript = [self normaltTransitions]? self.scripts.firstObject:self.scripts.lastObject;
     [self showAnimationWithScript:firstScript];

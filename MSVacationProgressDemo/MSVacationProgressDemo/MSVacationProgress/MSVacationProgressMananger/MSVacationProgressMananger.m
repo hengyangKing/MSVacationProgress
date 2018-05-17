@@ -15,6 +15,10 @@
 #define ProgressToken @"isShow"
 #define kProgressKey NSStringFromClass([self class])
 @interface MSVacationProgressMananger()<MSVacationProgressViewDelegate,MSVacationProgressViewDataSorce>
+{
+    MSVacationProgressManagerCurtainConfig * _curtainConfig;
+    BOOL _isLoading;
+}
 @property(nonatomic,strong)MSVacationProgressView *progressView;
 @property(nonatomic,strong)NSArray <MSVacationProgressScript *> *scripts;
 @property(nonatomic,strong)MSVacationProgressViewAppearanceConfig *appearConfig;
@@ -63,7 +67,13 @@ static MSVacationProgressMananger *_shareInstance;
     }
     return _appearConfig;
 }
-
+-(MSVacationProgressManagerCurtainConfig *)curtainConfig {
+    if (!_curtainConfig) {
+        _curtainConfig = [MSVacationProgressManagerCurtainConfig defauteCurtainConfig];
+        _curtainConfig.CurtainView([MSVacationProgressCurtainView curtainView]);
+    }
+    return _curtainConfig;
+}
 #pragma mark public func
 -(void)showProgressWithScripts:(NSArray <MSVacationProgressScript *>* (^)(void))scripts andAppearanceConfig:(void (^)(MSVacationProgressViewAppearanceConfig *appear))appearConfig {
     NSArray <MSVacationProgressScript *> *scriptDatas;
@@ -78,7 +88,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
-    if (self.isLoaded) {return;}
+//    if (self.isLoaded) {return;}
     
     [self showProgressWithScripts:^NSArray<MSVacationProgressScript *> *{
         MSVacationProgressScript *script0 = [MSVacationProgressScript progressScriptWithTitle:@"信息读取中..." andSubTitle:@"正在读取您管理的班级信息" andTimeInterval:1.5f];
@@ -87,8 +97,12 @@ static MSVacationProgressMananger *_shareInstance;
         return @[script0,script1,script2];
     } andAppearanceConfig:nil];
 }
-
+-(void)showDefaultProgressWithFinishBlock:(void(^)(void))block {
+    [self finishProgressBlock:block];
+    [self showDefaultProgress];
+}
 -(void)dissmiss {
+    _isLoading = NO;
     [self.progressView dismiss];
     [[NSUserDefaults standardUserDefaults] setObject:ProgressToken forKey:kProgressKey];
 }
@@ -120,6 +134,9 @@ static MSVacationProgressMananger *_shareInstance;
     NSString *isShowProgress=[[NSUserDefaults standardUserDefaults]objectForKey:kProgressKey];
     return isShowProgress.length;
 }
+-(BOOL)isLoading {
+    return _isLoading;
+}
 #pragma mark funcs
 -(void)progressShow {
     UIView *topview = [UIViewController currentTopVC].view;
@@ -136,11 +153,17 @@ static MSVacationProgressMananger *_shareInstance;
     return self.scripts;
 }
 -(void)MSVacationProgressViewWillShowAnimate:(MSVacationProgressView *)view {
+    _isLoading = YES;
     !self.willShowBlock?:self.willShowBlock();
 }
 
 -(void)MSVacationProgressViewWillFinishAnimate:(MSVacationProgressView *)view {
     !self.willFinishBlock?:self.willFinishBlock();
+    if (self.curtainConfig.showCurtain) {
+        [self addCurtainWithConfig:self.curtainConfig];
+    }else{
+        [self dissmiss];
+    }
 }
 
 //每次切换脚本调用

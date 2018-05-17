@@ -21,6 +21,8 @@
 
 -(void)showDefaultProgress;
 
+-(void)showDefaultProgressWithFinishBlock:(void(^)(void))block;
+
 -(void)dissmiss;
 
 //进度条将要展示完成block
@@ -36,4 +38,10 @@
 -(void)addCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config ;
 //是否已经加载过动画
 @property(nonatomic,assign,readonly)BOOL isLoaded;
+
+//正在展示动画标识
+@property(nonatomic,assign,readonly)BOOL isLoading;
+
+@property(nonatomic,strong,readonly)MSVacationProgressManagerCurtainConfig *curtainConfig;
+
 @end

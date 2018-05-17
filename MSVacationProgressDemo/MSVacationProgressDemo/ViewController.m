@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MSVacationProgressMananger.h"
 #import "MSVacationProgressCurtainView.h"
+#import "Masonry.h"
 @interface ViewController ()
 @end
 
@@ -17,23 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor redColor]];
+    MSVacationProgressCurtainView *fooview = [MSVacationProgressCurtainView curtainView];
+    [self.view addSubview:fooview];
+    [fooview mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.mas_equalTo(self.view);
+    }];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [[MSVacationProgressMananger shareInstance]showDefaultProgress];
+    [[MSVacationProgressMananger shareInstance]showDefaultProgressWithFinishBlock:^{
+        NSLog(@"finish");
+    }];
     [[MSVacationProgressMananger shareInstance]willShowProgressBlock:^{
         NSLog(@"will show progress");
     }];
     [[MSVacationProgressMananger shareInstance]switchingScriptBlock:^(NSUInteger index) {
         NSLog(@"switching script index is %@",@(index));
     }];
-    [[MSVacationProgressMananger shareInstance]finishProgressBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            MSVacationProgressManagerCurtainConfig *config = [MSVacationProgressManagerCurtainConfig defauteCurtainConfig];
-            config.CurtainView([MSVacationProgressCurtainView curtainView]);
-            [[MSVacationProgressMananger shareInstance]addCurtainWithConfig:config];
-        });
-    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MSVacationProgressMananger shareInstance].curtainConfig.showCurtainView(YES);
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"%@",@([MSVacationProgressMananger shareInstance].isLoading));
+    });
     
 }
 
