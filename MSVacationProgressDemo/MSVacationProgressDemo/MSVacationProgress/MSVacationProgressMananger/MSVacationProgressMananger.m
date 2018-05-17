@@ -75,7 +75,6 @@ static MSVacationProgressMananger *_shareInstance;
     !appearConfig?:appearConfig(self.appearConfig);
     if (!self.appearConfig) {return;}
     [self progressShow];
-    
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
@@ -91,7 +90,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 
 -(void)dissmiss {
-    [self.progressView removeFromSuperview];
+    [self.progressView dismiss];
 }
 -(void)finishProgressBlock:(MSVacationProgressManagerCurtainConfig *(^)(MSVacationProgressManagerCurtainConfig *))block {
     [self setWillFinishBlock:block];
@@ -124,6 +123,7 @@ static MSVacationProgressMananger *_shareInstance;
         if(config.autoDismissCurtain && config.showCurtainTime > 0){
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(config.showCurtainTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakself dissmiss];
+                [config.curtain removeFromSuperview];
             });
         }
     }

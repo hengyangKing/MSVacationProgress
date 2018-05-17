@@ -85,6 +85,7 @@
 -(void)show {
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(scriptsForMSVacationProgressView:)]) {
         NSArray <MSVacationProgressScript *>*scripts = [self.dataSource scriptsForMSVacationProgressView:self];
+        [self.scripts removeAllObjects];
         __weak typeof(self) weakSelf = self;
         [scripts enumerateObjectsUsingBlock:^(MSVacationProgressScript * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj grundScript]) {
@@ -100,13 +101,10 @@
 }
 -(void)dismiss {
     [self removeFromSuperview];
-    _progress = nil;
+    [self.progress setProgress:0 andInterval:0.1 animatedFinish:nil];
     _config = nil;
     _collectionView = nil;
     _scripts = nil;
-    
-    
-    
 }
 #pragma mark funcs
 -(void)showAnimation {

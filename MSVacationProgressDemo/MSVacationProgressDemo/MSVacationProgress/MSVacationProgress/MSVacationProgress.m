@@ -17,6 +17,7 @@
 @end
 @implementation MSVacationProgress
 #pragma mark lazy
+
 -(MSVacationProgressAppearanceConfig *)config {
     if (!_config) {
         _config = [MSVacationProgressAppearanceConfig defauteAppearConfig];
@@ -60,10 +61,6 @@
 }
 
 - (void)setProgress:(float)progress andInterval:(NSTimeInterval)interval animatedFinish:(void(^)(void))finish {
-    if ((self.innerView.bounds.size.width == self.bgView.bounds.size.width)&&(self.innerView.bounds.size.width !=0)) {
-        !finish?:finish();
-        return;
-    }
     NSTimeInterval time = interval>0?interval:0.3f;
     progress = (progress>=1.0f)?1.0f:progress;
     progress = (progress<=0)?0:progress;
