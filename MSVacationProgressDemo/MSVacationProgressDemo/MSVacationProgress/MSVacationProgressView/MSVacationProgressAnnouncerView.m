@@ -74,13 +74,13 @@
     [self addSubview:self.subTitle];
     __weak typeof(self) weakself = self;
     [self.title mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(weakself);
-        make.height.mas_equalTo(weakself).multipliedBy(0.5);
+        make.left.right.mas_equalTo(weakself);
+        make.height.mas_equalTo(30);
+        make.bottom.mas_equalTo(weakself.subTitle.mas_top).mas_offset(-5);
     }];
-    
     [self.subTitle mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.mas_equalTo(weakself);
-        make.top.mas_equalTo(weakself.title.mas_bottom);
+        make.height.mas_equalTo(25);
     }];
 }
 

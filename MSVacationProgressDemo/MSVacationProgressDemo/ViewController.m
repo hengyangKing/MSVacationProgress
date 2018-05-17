@@ -7,48 +7,32 @@
 //
 
 #import "ViewController.h"
-#import "MSVacationProgressView.h"
-//#import "MSVacationProgressScript.h"
-#import "Masonry.h"
-@interface ViewController ()<MSVacationProgressViewDelegate,MSVacationProgressViewDataSorce>
-@property(nonatomic,strong)MSVacationProgressView *progress;
+#import "MSVacationProgressMananger.h"
+#import "MSVacationProgressCurtainView.h"
+@interface ViewController ()
 @end
 
 @implementation ViewController
--(MSVacationProgressView *)progress {
-    if (!_progress) {
-        _progress = [MSVacationProgressView createWithAppearanceConfig:^(MSVacationProgressViewAppearanceConfig *config) {
-            
-        }];
-        _progress.delegate = self;
-        _progress.dataSource = self;
-    }
-    return _progress;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //测试进度条
-    
-    [self.view addSubview:self.progress];
-    [self.progress mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.mas_equalTo(self.view);
-    }];
-    NSLog(@"123");
-    
-    [self.progress show];
-
+    [self.view setBackgroundColor:[UIColor redColor]];
 }
-
-
-
-- (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSInteger i = 0; i<3 ; i++) {
-        NSString *str = [NSString stringWithFormat:@"%@",@(i)];
-        MSVacationProgressScript *script = [MSVacationProgressScript progressScriptWithTitle:str andSubTitle:str andTimeInterval:1.5];
-        [array addObject:script];
-    }
-    return array;
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [[MSVacationProgressMananger shareInstance]showDefaultProgress];
+    [[MSVacationProgressMananger shareInstance]willShowProgressBlock:^{
+        NSLog(@"will show progress");
+    }];
+    [[MSVacationProgressMananger shareInstance]switchingScriptBlock:^(NSUInteger index) {
+        NSLog(@"switching script index is %@",@(index));
+    }];
+    
+    [[MSVacationProgressMananger shareInstance] finishProgressBlock:^MSVacationProgressManagerCurtainConfig *(MSVacationProgressManagerCurtainConfig *config) {
+        NSLog(@"finish Progress Block");
+        config.CurtainView([MSVacationProgressCurtainView curtainView]);
+        return config;
+    }];
 }
 
 

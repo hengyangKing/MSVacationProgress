@@ -10,11 +10,11 @@
 		194D94520264BC85D6B63E54 /* Pods_MSVacationProgressDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */; };
 		3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */; };
 		3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6E20ABE9FB00149E24 /* ViewController.m */; };
-		3C29CA7220ABE9FB00149E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7020ABE9FB00149E24 /* Main.storyboard */; };
 		3C29CA7420ABE9FB00149E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7320ABE9FB00149E24 /* Assets.xcassets */; };
 		3C29CA7720ABE9FB00149E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */; };
 		3C29CA7A20ABE9FC00149E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA7920ABE9FC00149E24 /* main.m */; };
 		3C49D33C20AD27A700879CDD /* MSVacationProgressScriptContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */; };
+		3C49D34020AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */; };
 		3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */; };
 		3C89868120AC1240001A3A88 /* MSVacationProgressCurtainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */; };
 		3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C89868E20AC8D0B001A3A88 /* MSVacationProgress.m */; };
@@ -34,13 +34,14 @@
 		3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C29CA6D20ABE9FB00149E24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3C29CA6E20ABE9FB00149E24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3C29CA7120ABE9FB00149E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C29CA7320ABE9FB00149E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C29CA7620ABE9FB00149E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C29CA7820ABE9FC00149E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C29CA7920ABE9FC00149E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C49D33A20AD27A700879CDD /* MSVacationProgressScriptContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressScriptContent.h; sourceTree = "<group>"; };
 		3C49D33B20AD27A700879CDD /* MSVacationProgressScriptContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressScriptContent.m; sourceTree = "<group>"; };
+		3C49D33E20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressManagerCurtainConfig.h; sourceTree = "<group>"; };
+		3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressManagerCurtainConfig.m; sourceTree = "<group>"; };
 		3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressMananger.h; sourceTree = "<group>"; };
 		3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVacationProgressMananger.m; sourceTree = "<group>"; };
 		3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVacationProgressCurtainView.h; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 				3C29CA6D20ABE9FB00149E24 /* ViewController.h */,
 				3C29CA6E20ABE9FB00149E24 /* ViewController.m */,
 				3C89866E20AC01EC001A3A88 /* MSVacationProgress */,
-				3C29CA7020ABE9FB00149E24 /* Main.storyboard */,
 				3C29CA7320ABE9FB00149E24 /* Assets.xcassets */,
 				3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */,
 				3C29CA7820ABE9FC00149E24 /* Info.plist */,
@@ -109,14 +109,25 @@
 			path = MSVacationProgressDemo;
 			sourceTree = "<group>";
 		};
-		3C89866E20AC01EC001A3A88 /* MSVacationProgress */ = {
+		3C49D33D20AD47F800879CDD /* MSVacationProgressMananger */ = {
 			isa = PBXGroup;
 			children = (
 				3C89867220AC0247001A3A88 /* MSVacationProgressMananger.h */,
 				3C89867320AC0247001A3A88 /* MSVacationProgressMananger.m */,
+				3C49D33E20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.h */,
+				3C49D33F20AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m */,
+				3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */,
+				3C8986A120AC8D64001A3A88 /* UIViewController+CurrentTopVC.h */,
+			);
+			path = MSVacationProgressMananger;
+			sourceTree = "<group>";
+		};
+		3C89866E20AC01EC001A3A88 /* MSVacationProgress */ = {
+			isa = PBXGroup;
+			children = (
 				3C89867F20AC1240001A3A88 /* MSVacationProgressCurtainView.h */,
 				3C89868020AC1240001A3A88 /* MSVacationProgressCurtainView.m */,
-				3C89869F20AC8D64001A3A88 /* Tools */,
+				3C49D33D20AD47F800879CDD /* MSVacationProgressMananger */,
 				3C89868B20AC8D0B001A3A88 /* MSVacationProgress */,
 				3C89869220AC8D55001A3A88 /* MSVacationProgressView */,
 			);
@@ -149,15 +160,6 @@
 				3C89869820AC8D55001A3A88 /* MSVacationProgressAnnouncerView.m */,
 			);
 			path = MSVacationProgressView;
-			sourceTree = "<group>";
-		};
-		3C89869F20AC8D64001A3A88 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				3C8986A020AC8D64001A3A88 /* UIViewController+CurrentTopVC.m */,
-				3C8986A120AC8D64001A3A88 /* UIViewController+CurrentTopVC.h */,
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		3FD25CDEBD6030888EC301C0 /* Frameworks */ = {
@@ -238,7 +240,6 @@
 			files = (
 				3C29CA7720ABE9FB00149E24 /* LaunchScreen.storyboard in Resources */,
 				3C29CA7420ABE9FB00149E24 /* Assets.xcassets in Resources */,
-				3C29CA7220ABE9FB00149E24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +299,7 @@
 				3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */,
 				3C89867420AC0247001A3A88 /* MSVacationProgressMananger.m in Sources */,
 				3C89869C20AC8D55001A3A88 /* MSVacationProgressScript.m in Sources */,
+				3C49D34020AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m in Sources */,
 				3C8986A220AC8D64001A3A88 /* UIViewController+CurrentTopVC.m in Sources */,
 				3C29CA7A20ABE9FC00149E24 /* main.m in Sources */,
 				3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */,
@@ -307,14 +309,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3C29CA7020ABE9FB00149E24 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C29CA7120ABE9FB00149E24 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3C29CA7520ABE9FB00149E24 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -451,7 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hengyangking.com.MSVacationProgressDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hengyangking.com.MSVacationProgressDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

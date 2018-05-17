@@ -12,6 +12,7 @@
 
 +(instancetype)curtainView {
     MSVacationProgressCurtainView *view = [[MSVacationProgressCurtainView alloc]init];
+    view.backgroundColor = [UIColor yellowColor];
     return view;
 }
 

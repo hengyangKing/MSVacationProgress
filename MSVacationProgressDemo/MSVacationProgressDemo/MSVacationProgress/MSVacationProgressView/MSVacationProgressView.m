@@ -10,17 +10,14 @@
 #import "MSVacationProgressAnnouncerView.h"
 #import "MSVacationProgress.h"
 #import "MSVacationProgressScript.h"
-#import "MSVacationProgressViewAppearanceConfig.h"
 #import "Masonry.h"
 
-#warning 暂至
 #define Margin 33
-#define ItemH 150
+#define ItemH 60
 #define ItemSize CGSizeMake([UIScreen mainScreen].bounds.size.width - 2*(Margin), ItemH)
 
 @interface MSVacationProgressView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property(nonatomic,assign)BOOL isAnimate;
 @property(nonatomic,strong)MSVacationProgress *progress;
 @property(nonatomic,strong)MSVacationProgressViewAppearanceConfig *config;
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -79,6 +76,8 @@
 +(instancetype)createWithAppearanceConfig:(void (^)(MSVacationProgressViewAppearanceConfig *))appearConfig {
     MSVacationProgressView *view = [[MSVacationProgressView alloc]init];
     !appearConfig?:appearConfig(view.config);
+    if (!view.config) {return nil;}
+    [view setBackgroundColor:view.config.bgColor];
     [view addSubviews];
 
     return view;
@@ -99,8 +98,15 @@
         });
     }
 }
--(void)dissmiss {
+-(void)dismiss {
     [self removeFromSuperview];
+    _progress = nil;
+    _config = nil;
+    _collectionView = nil;
+    _scripts = nil;
+    
+    
+    
 }
 #pragma mark funcs
 -(void)showAnimation {
@@ -120,7 +126,7 @@
     [self addSubview:self.collectionView];
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.mas_equalTo(weakSelf.progress);
-        make.bottom.mas_equalTo(weakSelf.progress.mas_top);
+        make.bottom.mas_equalTo(weakSelf.progress.mas_top).mas_offset(-50);
         make.height.mas_equalTo(ItemH);
     }];
 }
@@ -133,13 +139,15 @@
 -(void)showAnimationWithScript:(MSVacationProgressScript *)script{
     
     NSUInteger currentIndex = [self.scripts indexOfObject:script];
-    float targetProgress = ((currentIndex+1)*1.0)/((self.scripts.count)*1.0);
+    
+    float targetProgress = ([self normaltTransitions]?((currentIndex+1)*1.0):(((self.scripts.count-1) - currentIndex + 1)*1.0))/((self.scripts.count)*1.0);
+    
     __weak typeof(self) weakself = self;
     NSInteger next = [weakself normaltTransitions] ? currentIndex + 1:currentIndex-1;
-    if (next<0 || next == self.scripts.count+1) {return;}
-
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(MSVacationProgressView:andCurrentScript:andCurrentIndex:)]) {
-        [self.delegate MSVacationProgressView:self andCurrentScript:script andCurrentIndex:currentIndex];
+    
+    if (next < -1 || next == self.scripts.count+1) {return;}
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(MSVacationProgressViewSwitchingScript:andCurrentScript:andCurrentIndex:)]) {
+        [self.delegate MSVacationProgressViewSwitchingScript:self andCurrentScript:script andCurrentIndex:currentIndex];
     }
     
     [self.progress setProgress:targetProgress andInterval:script.interval animatedFinish:^{
@@ -176,29 +184,8 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(MSVacationProgressViewWillFinishAnimate:)]) {
         [self.delegate MSVacationProgressViewWillFinishAnimate:self];
     }
-    //脚本列表执行完毕 是否需要展示 finishview
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(MSVacationProgressViewCurtainView:)]) {
-        UIView *curtainView = [self.dataSource MSVacationProgressViewCurtainView:self];
-        [self addCurtainView:curtainView];
-    }else{
-        [self dissmiss];
-    }
 }
--(void)addCurtainView:(UIView *)curtainView {
-    [self addSubview:curtainView];
-    __weak typeof(self) weakself = self;
-    [curtainView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.mas_equalTo(weakself);
-    }];
-    NSTimeInterval time = 2.0f;
-    if (self.dataSource&&[self.dataSource respondsToSelector:@selector(MSVacationProgressViewCurtainViewStayTime:)]) {
-        time = [self.dataSource MSVacationProgressViewCurtainViewStayTime:self];
-        time = time>0?time:2.0f;
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self dissmiss];
-    });
-}
+
 
 #pragma mark delegate & datasource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

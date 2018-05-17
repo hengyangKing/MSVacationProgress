@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MSVacationProgressScript.h"
+#import "MSVacationProgressViewAppearanceConfig.h"
 @class MSVacationProgressView;
-@class MSVacationProgressViewAppearanceConfig;
 
 @protocol MSVacationProgressViewDelegate <NSObject>
 @optional
@@ -19,18 +19,12 @@
 -(void)MSVacationProgressViewWillFinishAnimate:(MSVacationProgressView *)view;
 
 //每次切换脚本调用
--(void)MSVacationProgressView:(MSVacationProgressView *)view andCurrentScript:(MSVacationProgressScript *)currentScript andCurrentIndex:(NSUInteger)currentIndex;
+-(void)MSVacationProgressViewSwitchingScript:(MSVacationProgressView *)view andCurrentScript:(MSVacationProgressScript *)currentScript andCurrentIndex:(NSUInteger)currentIndex;
 
 @end
 @protocol MSVacationProgressViewDataSorce <NSObject>
 
 - (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view;
-@optional
-///展示完成进度动画 的剧终view
-- (nullable UIView *)MSVacationProgressViewCurtainView:(MSVacationProgressView *)view;
-///展示完成进度动画 的剧终view 停留时长
-- (NSTimeInterval)MSVacationProgressViewCurtainViewStayTime:(MSVacationProgressView *)view;
-
 @end
 
 @interface MSVacationProgressView : UIView
@@ -43,7 +37,7 @@
 
 -(void)show;
 
--(void)dissmiss;
+-(void)dismiss;
 
 
 

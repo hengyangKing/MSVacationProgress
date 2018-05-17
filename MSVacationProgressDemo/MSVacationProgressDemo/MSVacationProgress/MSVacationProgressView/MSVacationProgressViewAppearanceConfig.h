@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger, MSProgressAnnouncerTransitionsType) {
 };
 
 @interface MSVacationProgressViewAppearanceConfig : NSObject
+
 +(instancetype)defauteAppearConfig;
 
 @property(nonatomic,copy,readonly)MSVacationProgressViewAppearanceConfig *(^TransitionsType)(MSProgressAnnouncerTransitionsType);//设置转场方式
@@ -51,7 +52,7 @@ typedef NS_ENUM(NSUInteger, MSProgressAnnouncerTransitionsType) {
 @property(nonatomic,assign,readonly)CGFloat progressH;
 
 @property(nonatomic,assign,readonly)MSProgressAnnouncerTransitionsType transitions;
-
+//进程
 @property(nonatomic,strong,readonly)MSVacationProgressAppearanceConfig *progressConfig;
 
 @end

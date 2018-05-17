@@ -89,7 +89,7 @@
 +(instancetype)defauteAppearConfig {
     MSVacationProgressViewAppearanceConfig *config = [[MSVacationProgressViewAppearanceConfig alloc]init];
     
-    config.BGcolor(ProgressRGB(245, 246, 247)).TitleTextFont(ProgressFONT(15)).SubTitleTextFont(ProgressFONT(12)).TitleTextColor(ProgressRGB(85, 85, 85)).SubTitleTextColor(ProgressRGB(85, 85, 85)).TransitionsType(AnnouncerTransitionsTypeIsUpward).ProgressAppearanceConfig([MSVacationProgressAppearanceConfig defauteAppearConfig]).ProgressBarH(5.0f);
+    config.BGcolor(ProgressRGB(245, 246, 247)).TitleTextFont(ProgressFONT(15)).SubTitleTextFont(ProgressFONT(12)).TitleTextColor(ProgressRGB(85, 85, 85)).SubTitleTextColor(ProgressRGB(144, 150, 158)).TransitionsType(AnnouncerTransitionsTypeIsUpward).ProgressAppearanceConfig([MSVacationProgressAppearanceConfig defauteAppearConfig]).ProgressBarH(5.0f);
     
     return config;
 }

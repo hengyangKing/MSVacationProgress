@@ -11,7 +11,7 @@
 +(instancetype)progressScriptWithTitle:(NSString *)title andSubTitle:(NSString *)subtitle andTimeInterval:(NSTimeInterval)timeInterval {
     MSVacationProgressScript *script = [[MSVacationProgressScript alloc]init];
     script.content.title = title;
-    script.content.subTitlt = title;
+    script.content.subTitlt = subtitle;
     script.interval = timeInterval;
     return script;
 }

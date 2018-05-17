@@ -38,6 +38,7 @@
 +(instancetype)MSVacationProgressWithConfig:(void (^)(MSVacationProgressAppearanceConfig *))config {
     MSVacationProgress *view = [[MSVacationProgress alloc]init];
     !config?:config(view.config);
+    if (!view.config) {return nil;}
     [view createUI];
     return view;
 }
