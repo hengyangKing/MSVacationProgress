@@ -12,6 +12,10 @@
 #import "MSVacationProgressCurtainView.h"
 #import "UIViewController+CurrentTopVC.h"
 #import "Masonry.h"
+
+//swizzling
+#import <objc/runtime.h>
+
 #define ProgressToken @"isShow"
 #define kProgressKey NSStringFromClass([self class])
 @interface MSVacationProgressMananger()<MSVacationProgressViewDelegate,MSVacationProgressViewDataSorce>
@@ -88,7 +92,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
-    if (self.isLoaded) {return;}
+//    if (self.isLoaded) {return;}
     
     [self showProgressWithScripts:^NSArray<MSVacationProgressScript *> *{
         MSVacationProgressScript *script0 = [MSVacationProgressScript progressScriptWithTitle:@"信息读取中..." andSubTitle:@"正在读取您管理的班级信息" andTimeInterval:1.5f];
@@ -105,6 +109,8 @@ static MSVacationProgressMananger *_shareInstance;
     _isLoading = NO;
     [self.progressView dismiss];
     [[NSUserDefaults standardUserDefaults] setObject:ProgressToken forKey:kProgressKey];
+    //取消调换
+    [self swizzlingFunc];
 }
 -(void)finishProgressBlock:(void (^)(void))block {
     [self setWillFinishBlock:block];
@@ -118,7 +124,7 @@ static MSVacationProgressMananger *_shareInstance;
 -(void)addCurtainWithConfig:(MSVacationProgressManagerCurtainConfig *)config {
     if (config.showCurtain && config.curtain) {
         __weak typeof(self) weakself = self;
-        [self.progressView addSubview:config.curtain];
+        [self.progressView insertSubview:config.curtain atIndex:self.progressView.subviews.count];
         [config.curtain mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.mas_equalTo(weakself.progressView);
         }];
@@ -140,14 +146,25 @@ static MSVacationProgressMananger *_shareInstance;
 #pragma mark funcs
 -(void)progressShow {
     UIView *topview = [UIViewController currentTopVC].view;
+    topview.tag = 222;
     if (topview) {
         [topview addSubview:self.progressView];
+        //调换
+        [self swizzlingFunc];
         [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.mas_equalTo(topview);
         }];
         [self.progressView show];
     }
 }
+-(void)swizzlingFunc {
+    UIView *superView = self.progressView.superview;
+    NSLog(@"%@",@(superView.tag));
+    Method sys_add = class_getInstanceMethod([superView class], @selector(addSubview:));
+    Method manager_add = class_getInstanceMethod([superView class], @selector(MS_addSubview:));
+    method_exchangeImplementations(sys_add, manager_add);
+}
+
 #pragma ProgressView datasource
 - (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
     return self.scripts;
@@ -158,6 +175,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 
 -(void)MSVacationProgressViewWillFinishAnimate:(MSVacationProgressView *)view {
+    
     !self.willFinishBlock?:self.willFinishBlock();
     if (self.curtainConfig.showCurtain) {
         [self addCurtainWithConfig:self.curtainConfig];
@@ -169,5 +187,12 @@ static MSVacationProgressMananger *_shareInstance;
 //每次切换脚本调用
 -(void)MSVacationProgressViewSwitchingScript:(MSVacationProgressView *)view andCurrentScript:(MSVacationProgressScript *)currentScript andCurrentIndex:(NSUInteger)currentIndex {
     !self.switchingScriptBlock?:self.switchingScriptBlock(currentIndex);
+}
+@end
+
+@implementation UIView (Swizzling)
+-(void)MS_addSubview:(UIView *)view {
+    NSUInteger index = (self.subviews.count>0)?(self.subviews.count - 1):0;
+    [self insertSubview:view atIndex:index];
 }
 @end

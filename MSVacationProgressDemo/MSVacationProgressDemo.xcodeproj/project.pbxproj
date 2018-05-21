@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		194D94520264BC85D6B63E54 /* Pods_MSVacationProgressDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */; };
+		3C1C99B720B2B730003244E4 /* TabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C99B620B2B730003244E4 /* TabbarController.m */; };
 		3C29CA6C20ABE9FB00149E24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */; };
 		3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C29CA6E20ABE9FB00149E24 /* ViewController.m */; };
 		3C29CA7420ABE9FB00149E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29CA7320ABE9FB00149E24 /* Assets.xcassets */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		0D0BDECCB75320D9AEAE1E58 /* Pods_MSVacationProgressDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSVacationProgressDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		284B7D7DD24C5F2BE2D9533B /* Pods-MSVacationProgressDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSVacationProgressDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MSVacationProgressDemo/Pods-MSVacationProgressDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3C1C99B520B2B730003244E4 /* TabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarController.h; sourceTree = "<group>"; };
+		3C1C99B620B2B730003244E4 /* TabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarController.m; sourceTree = "<group>"; };
 		3C29CA6720ABE9FB00149E24 /* MSVacationProgressDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSVacationProgressDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C29CA6A20ABE9FB00149E24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				3C29CA6A20ABE9FB00149E24 /* AppDelegate.h */,
 				3C29CA6B20ABE9FB00149E24 /* AppDelegate.m */,
+				3C1C99B520B2B730003244E4 /* TabbarController.h */,
+				3C1C99B620B2B730003244E4 /* TabbarController.m */,
 				3C29CA6D20ABE9FB00149E24 /* ViewController.h */,
 				3C29CA6E20ABE9FB00149E24 /* ViewController.m */,
 				3C89866E20AC01EC001A3A88 /* MSVacationProgress */,
@@ -297,6 +302,7 @@
 				3C89869120AC8D0B001A3A88 /* MSVacationProgressAppearanceConfig.m in Sources */,
 				3C89869020AC8D0B001A3A88 /* MSVacationProgress.m in Sources */,
 				3C29CA6F20ABE9FB00149E24 /* ViewController.m in Sources */,
+				3C1C99B720B2B730003244E4 /* TabbarController.m in Sources */,
 				3C89869C20AC8D55001A3A88 /* MSVacationProgressScript.m in Sources */,
 				3C49D34020AD483600879CDD /* MSVacationProgressManagerCurtainConfig.m in Sources */,
 				3C8986A220AC8D64001A3A88 /* UIViewController+CurrentTopVC.m in Sources */,

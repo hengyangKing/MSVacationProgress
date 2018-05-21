@@ -108,6 +108,7 @@
 }
 #pragma mark funcs
 -(void)showAnimation {
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(MSVacationProgressViewWillShowAnimate:)]) {
         [self.delegate MSVacationProgressViewWillShowAnimate:self];
     }
@@ -115,6 +116,9 @@
     MSVacationProgressScript *firstScript = [self normaltTransitions]? self.scripts.firstObject:self.scripts.lastObject;
     [self showAnimationWithScript:firstScript];
 }
+
+
+
 -(void)addSubviews {
     [self addSubview:self.progress];
     __weak typeof(self) weakSelf = self;
