@@ -92,6 +92,7 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)showDefaultProgress{
     //需要判断是否是首次布置作业
+    
 //    if (self.isLoaded) {return;}
     
     [self showProgressWithScripts:^NSArray<MSVacationProgressScript *> *{
@@ -107,10 +108,11 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)dissmiss {
     _isLoading = NO;
-    [self.progressView dismiss];
-    [[NSUserDefaults standardUserDefaults] setObject:ProgressToken forKey:kProgressKey];
+    
     //取消调换
     [self swizzlingFunc];
+    [self.progressView dismiss];
+    [[NSUserDefaults standardUserDefaults] setObject:ProgressToken forKey:kProgressKey];
 }
 -(void)finishProgressBlock:(void (^)(void))block {
     [self setWillFinishBlock:block];
@@ -146,11 +148,11 @@ static MSVacationProgressMananger *_shareInstance;
 #pragma mark funcs
 -(void)progressShow {
     UIView *topview = [UIViewController currentTopVC].view;
-    topview.tag = 222;
     if (topview) {
-        [topview addSubview:self.progressView];
+        [topview insertSubview:self.progressView atIndex:topview.subviews.count];
         //调换
         [self swizzlingFunc];
+
         [self.progressView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.mas_equalTo(topview);
         }];
@@ -159,12 +161,10 @@ static MSVacationProgressMananger *_shareInstance;
 }
 -(void)swizzlingFunc {
     UIView *superView = self.progressView.superview;
-    NSLog(@"%@",@(superView.tag));
     Method sys_add = class_getInstanceMethod([superView class], @selector(addSubview:));
     Method manager_add = class_getInstanceMethod([superView class], @selector(MS_addSubview:));
     method_exchangeImplementations(sys_add, manager_add);
 }
-
 #pragma ProgressView datasource
 - (nullable NSArray<MSVacationProgressScript *> *)scriptsForMSVacationProgressView:(MSVacationProgressView *)view {
     return self.scripts;

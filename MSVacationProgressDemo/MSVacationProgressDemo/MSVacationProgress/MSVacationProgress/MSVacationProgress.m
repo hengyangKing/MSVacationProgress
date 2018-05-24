@@ -61,6 +61,7 @@
 }
 
 - (void)setProgress:(float)progress andInterval:(NSTimeInterval)interval animatedFinish:(void(^)(void))finish {
+    [self stopAnimate];
     NSTimeInterval time = interval>0?interval:0.3f;
     progress = (progress>=1.0f)?1.0f:progress;
     progress = (progress<=0)?0:progress;
@@ -79,11 +80,13 @@
         [UIView animateWithDuration:time animations:^{
             [self.superview layoutIfNeeded];
         } completion:^(BOOL finished) {
-            !finish?:finish();
+            !finished?:(!finish?:finish());
         }];
     });
 }
-
+-(void)stopAnimate {
+    [self.layer removeAllAnimations];
+}
 
 
 @end

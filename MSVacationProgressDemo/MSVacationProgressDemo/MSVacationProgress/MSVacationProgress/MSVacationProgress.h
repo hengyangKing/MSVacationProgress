@@ -14,5 +14,5 @@
 +(instancetype)MSVacationProgressWithConfig:(void (^)(MSVacationProgressAppearanceConfig *))config;
 
 - (void)setProgress:(float)progress andInterval:(NSTimeInterval)interval animatedFinish:(void(^)(void))finish;
-
+-(void)stopAnimate ;
 @end

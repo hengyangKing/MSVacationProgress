@@ -102,9 +102,9 @@
 -(void)dismiss {
     [self removeFromSuperview];
     [self.progress setProgress:0 andInterval:0.1 animatedFinish:nil];
+    _scripts = nil;
     _config = nil;
     _collectionView = nil;
-    _scripts = nil;
 }
 #pragma mark funcs
 -(void)showAnimation {
@@ -179,10 +179,9 @@
 }
 -(void)progressWithIndex:(NSUInteger)nextIndex {
     //翻页
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:nextIndex inSection:0] atScrollPosition:(UICollectionViewScrollPositionNone) animated:YES];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextIndex inSection:0] atScrollPosition:(UICollectionViewScrollPositionNone) animated:YES];
     MSVacationProgressScript *nextScript = self.scripts[nextIndex];
     [self showAnimationWithScript:nextScript];
-    
 }
 -(void)progressAnimationFinish {
     //进度条展示完毕
